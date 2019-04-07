@@ -1,0 +1,32 @@
+{
+	"jsonrpc": "2.0",
+	"id": 6,
+	"delta": true,
+	"result": {
+		"qLayout": {
+			"qInfo": {
+				"qId": "qfJCzec",
+				"qType": "measure"
+			},
+			"qMeasure": {
+				"qLabel": "1",
+				"qDef": "1",
+				"qGrouping": "N",
+				"qExpressions": [],
+				"qActiveExpression": 0,
+				"qLabelExpression": "1",
+				"coloring": {
+					"baseColor": {
+						"color": "#276e27",
+						"index": 3
+					}
+				}
+			},
+			"qMeta": {
+				"title": "1",
+				"description": "1",
+				"tags": []
+			}
+		}
+	}
+}

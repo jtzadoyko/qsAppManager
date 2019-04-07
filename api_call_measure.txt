@@ -1,0 +1,29 @@
+{
+	"handle": 1,
+	"method": "CreateMeasure",
+	"params": {
+		"qProp": {
+			"qInfo": {
+				"qId": "1",
+				"qType": "measure"
+			},
+			"qMeasure": {
+				"qLabel": "title",
+				"qDef": "COUNT(1)",
+				"qGrouping": "N",
+				"qExpressions": [
+					"qExpression"
+				],
+				"qActiveExpression": 0,
+				"qLabelExpression": "'qLabelExpression'",
+				"coloring": {
+					"baseColor": {
+						"color": "#ffcf02",
+						"index": 8
+					}
+				}
+			},
+			"qMetaDef": {"title":"title","description":"description","tags":["tags"]}
+		}
+	}
+}
