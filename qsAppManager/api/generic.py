@@ -1,11 +1,21 @@
 # -*- coding: utf-8 -*-
 # @Author: jtzadoyko
 # @Date:   2019-03-09 23:42:09
-# @Last Modified by:   jtzadoyko
-# @Last Modified time: 2019-03-26 22:13:51
+# @Last Modified by:   jtzdoyko
+# @Last Modified time: 2019-04-09 21:27:14
 import json
 
+
 class qsEngineGenericObjectApi:
+    """
+
+    TODO:
+
+    Args:
+
+    Attributes:
+
+    """
 
     def __init__(self, socket):
         self.engine_socket = socket

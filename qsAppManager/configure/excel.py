@@ -2,7 +2,7 @@
 # @Author: jtzadoyko
 # @Date:   2019-03-09 23:42:09
 # @Last Modified by:   jtzdoyko
-# @Last Modified time: 2019-04-08 21:14:01
+# @Last Modified time: 2019-04-09 21:27:33
 
 
 import pandas as pd
@@ -70,7 +70,7 @@ class excelConfig(baseConfig):
         for master items
 
         Note:
-            
+
         Args:
 
         Returns:

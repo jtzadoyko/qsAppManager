@@ -1,14 +1,23 @@
 # -*- coding: utf-8 -*-
 # @Author: jtzadoyko
 # @Date:   2019-03-09 23:42:09
-# @Last Modified by:   jtzadoyko
-# @Last Modified time: 2019-03-26 19:20:04
+# @Last Modified by:   jtzdoyko
+# @Last Modified time: 2019-04-09 21:27:17
 
 
 from websocket import create_connection
 
 
 class qsEngineCommunication:
+    """
+
+    TODO:
+
+    Args:
+
+    Attributes:
+
+    """
 
     def __init__(self, url):
         self.url = url
@@ -21,5 +30,5 @@ class qsEngineCommunication:
         return self.ws.recv()
 
     @staticmethod
-    def close_qvengine_connection(self):
+    def close_engine_connection(self):
         self.ws.close()
