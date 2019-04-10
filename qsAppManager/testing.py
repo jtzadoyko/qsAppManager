@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 # @Author: jtzadoyko
 # @Date:   2019-03-26 21:14:29
-# @Last Modified by:   jtzadoyko
-# @Last Modified time: 2019-03-26 22:36:26
-from qsConfig_connection import qsConfiguration
-from qsApi_connection import qsEngineCommunication
-from qsApi_global import qsEngineGlobalApi
-from qsApi_generic import qsEngineGenericObjectApi
-from qsApi_application import qsEngineAppApi
+# @Last Modified by:   jtzdoyko
+# @Last Modified time: 2019-04-10 19:23:49
+
+# from qsConfig_connection import qsConfiguration
+# from qsApi_connection import qsEngineCommunication
+# from qsApi_global import qsEngineGlobalApi
+# from qsApi_generic import qsEngineGenericObjectApi
+# from qsApi_application import qsEngineAppApi
 
 # measures = qsConfiguration(targetFile='Qlik Application Manager.xlsx', targetSheet='Master Measures')
 # print(measures.fields)
