@@ -14,6 +14,7 @@ class baseConfig:
     TODO:
         determine if the file path specified was placed within the qlik directory
         determine the file type and delimiter
+        determine the user name for Desktop connection
 
 
     Args:
