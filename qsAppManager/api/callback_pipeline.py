@@ -12,6 +12,7 @@ class callback_pipeline:
 	"""
 
     TODO:
+    	create class which interprets feedback from json api as a data pipeline
 
     Args:
 
