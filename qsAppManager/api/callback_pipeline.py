@@ -8,7 +8,7 @@
 import json
 
 
-class callback_layout:
+class callback_pipeline:
 	"""
 
     TODO:

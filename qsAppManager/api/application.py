@@ -10,6 +10,7 @@ class qsEngineAppApi:
     """
 
     TODO:
+        create applyPatches function inorder to update master items
 
     Args:
 
