@@ -2,13 +2,12 @@
 # @Author: jtzadoyko
 # @Date:   2019-03-09 23:42:09
 # @Last Modified by:   jtzdoyko
-# @Last Modified time: 2019-04-09 21:27:33
+# @Last Modified time: 2019-05-06 20:07:43
 
 
 import pandas as pd
 import os
-from base import baseConfig
-
+from .base import baseConfig
 
 class excelConfig(baseConfig):
     VARS_REQ = {'Name', 'Definition', 'Tags'}
