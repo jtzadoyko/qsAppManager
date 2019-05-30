@@ -34,6 +34,7 @@ class main_menu:
     ''' + '''
        {1}--Retrieve Application's Meta Data
        {2}--Update Application's Master Items and Variables
+       {3}--Settings
        {99}-EXIT\n
      ''')
         choice = input(app_manager_prompt)
@@ -41,6 +42,8 @@ class main_menu:
             meta_data()
         elif choice == "2":
         	update_calculations()
+	elif choice == "3":
+		retrieve_settings()
        	else:
        		sys.exit()
 
@@ -116,5 +119,38 @@ class update_calculations:
     def completed(self):
         input("Completed, click return to go back")
         self.__init__()
+	
+	
+class retrieve_settings:
+    menuLogo = '''
+		88   88  88""Yb  8888B      db     888888  888888
+		88   88  88__dP  88  Yb    dPYb      88    88__
+		Y8   8P  88"""   88  dY   dP__Yb     88    88""
+		`YbodP'  88      888y"   dP""""Yb    88    888888
+    '''
 
+    def __init__(self):
+        clearScr()
+        print(self.menuLogo)
+        print("\t{1}--Select a Configuration File")
+        print("\t{2}--Select a target application")
+        print("\t{3}--Select a platform")
+        print("\t{99}-Back To Main Menu \n")
+        choice_update = input(app_manager_prompt)
+        clearScr()
+        if choice_update == "1":
+            print('placeholder')
+        elif choice_update == "2":
+            print('placeholder')
+        elif choice_update == "3":
+            print('placeholder')        
+        elif choice_update == "99":
+            main_menu()
+        else:
+            self.__init__()
+        self.completed()
+
+    def completed(self):
+        input("Completed, click return to go back")
+        self.__init__()
 x = main_menu()
