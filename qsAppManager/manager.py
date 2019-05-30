@@ -39,7 +39,7 @@ class main_menu:
      ''')
         choice = input(app_manager_prompt)
         if choice == "1":
-            meta_data()
+            	meta_data()
         elif choice == "2":
         	update_calculations()
 	elif choice == "3":
@@ -67,16 +67,25 @@ class meta_data:
         print(self.menuLogo)
         print("\t{1}--Export Master Items")
         print("\t{2}--Export Fields")
-        print("\t{3}--Export All")
+	print("\t{3}--Export Source Tables")
+        print("\t{4}--Export All")
+	print("\t{5}--Generate Template")
+	print("\t{6}--Generate Existing Application File")
         print("\t{99}-Back To Main Menu \n")
         choice_meta = input(app_manager_prompt)
         clearScr()
         if choice_meta == "1":
-            print('placeholder')
+            print('Export_Master_Items()')	
         elif choice_meta == "2":
-            print('placeholder')
+            print('Export_Fields()')
         elif choice_meta == "3":
-            print('placeholder')        
+            print('Export_Source_Tables()')
+	elif choice_meta == "4":
+            print('Export_All()')
+	elif choice_meta == "5":
+            print('Generate_Template()')
+	elif choice_meta == "6":
+            print('Generate_File()')
         elif choice_meta == "99":
             main_menu()
         else:
@@ -98,18 +107,27 @@ class update_calculations:
     def __init__(self):
         clearScr()
         print(self.menuLogo)
-        print("\t{1}--Export Master Items")
-        print("\t{2}--Export Fields")
-        print("\t{3}--Export All")
+        print("\t{1}--Partial Update Master Items")
+        print("\t{2}--Partial Update Variables")
+	print("\t{3}--Partial Update All")
+	print("\t{4}--Full Update Master Items")
+	print("\t{5}--Full Update Variables")
+	print("\t{6}--Full Update All")
         print("\t{99}-Back To Main Menu \n")
         choice_update = input(app_manager_prompt)
         clearScr()
         if choice_update == "1":
-            print('placeholder')
-        elif choice_update == "2":
-            print('placeholder')
-        elif choice_update == "3":
-            print('placeholder')        
+		print('Partial_Update_Master_Items()')
+	elif choice_update == "2":
+		print('Partial_Update_Variables()')
+	elif choice_update == "3":
+		print('Partial_Update_All()')
+	elif choice_update == "4":
+		print('Full_Update_Master_Items()')
+	elif choice_update == "5":
+		print('Full_Update_Variables()')
+	elif choice_update == "6":
+		print('Full_Update_All()')
         elif choice_update == "99":
             main_menu()
         else:
@@ -139,11 +157,11 @@ class retrieve_settings:
         choice_update = input(app_manager_prompt)
         clearScr()
         if choice_update == "1":
-            print('placeholder')
+            print('Config_File()')
         elif choice_update == "2":
-            print('placeholder')
+            print('Target_App()')
         elif choice_update == "3":
-            print('placeholder')        
+            print('Platform()')        
         elif choice_update == "99":
             main_menu()
         else:
