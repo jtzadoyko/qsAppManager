@@ -79,3 +79,11 @@ class excelConfig(baseConfig):
             return True
         else:
             return False
+        
+ # below: populating excel file information into a dictionary, named "values_dict"
+
+    def config_to_dict(tfile): 
+        
+        excel_data = pd.read_excel(tfile) #read the excel file
+        
+        values_dict = excel_data.to_dict() #convert the excel file data to dictionary
