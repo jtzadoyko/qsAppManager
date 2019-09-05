@@ -2,16 +2,16 @@
 # @Author: jtzadoyko
 # @Date:   2019-03-09 23:39:10
 # @Last Modified by:   jtzdoyko
-# @Last Modified time: 2019-09-04 23:59:03
+# @Last Modified time: 2019-09-05 00:04:16
 
 from __init__ import *
 
 
 def clearScr():
     os.system('cls' if os.name == 'nt' else 'clear')
+create_cfg()
 
-
-app_manager_prompt = "Qlik App Manager ~# "
+app_manager_prompt = "Qlik Sense Application Manager ~# "
 
 
 appmanagerlogo = r'''                  
