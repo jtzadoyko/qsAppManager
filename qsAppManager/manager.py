@@ -2,7 +2,7 @@
 # @Author: jtzadoyko
 # @Date:   2019-03-09 23:39:10
 # @Last Modified by:   jtzdoyko
-# @Last Modified time: 2019-09-05 00:04:16
+# @Last Modified time: 2019-09-05 17:42:18
 
 from __init__ import *
 
@@ -43,9 +43,9 @@ class main_menu:
      ''')
         choice = input(app_manager_prompt)
         if choice == "1":
-                meta_data()
+            info()
         elif choice == "2":
-            update_calculations()
+            developer()
         elif choice == "3":
             retrieve_settings()
         else:
@@ -58,7 +58,7 @@ class main_menu:
         self.__init__()
 
 
-class meta_data:
+class info:
     menuLogo = r'''
  .----------------.  .-----------------. .----------------.  .----------------. 
 | .--------------. || .--------------. || .--------------. || .--------------. |
@@ -104,7 +104,7 @@ class meta_data:
         input("Completed, click return to go back")
         self.__init__()
 
-class update_calculations:
+class developer:
     menuLogo = r'''
 .----------------.  .----------------.  .----------------. 
 | .--------------. || .--------------. || .--------------. |
