@@ -2,9 +2,9 @@
 # @Author: jtzadoyko
 # @Date:   2019-03-09 23:39:10
 # @Last Modified by:   jtzdoyko
-# @Last Modified time: 2019-09-04 20:07:21
-import os
-import sys
+# @Last Modified time: 2019-09-04 21:32:52
+
+from __init__ import *
 
 
 def clearScr():
@@ -31,8 +31,8 @@ class main_menu:
        }--------------{+} Powered By SDG Group {+}--------------{
        }--------------{+}     sdggroup.com     {+}--------------{
     ''' + '''
-       {1}--Retrieve Application's Meta Data
-       {2}--Update Application's Master Items and Variables
+       {1}--Application Information
+       {2}--Developer Tools
        {3}--Settings
        {99}-EXIT\n
      ''')
@@ -68,23 +68,20 @@ class meta_data:
         print("\t{2}--Export Fields")
         print("\t{3}--Export Source Tables")
         print("\t{4}--Export All")
-        print("\t{5}--Generate Template")
-        print("\t{6}--Generate Existing Application File")
+        print("\t{5}--Generate Application Template")
         print("\t{99}-Back To Main Menu \n")
         choice_meta = input(app_manager_prompt)
         clearScr()
         if choice_meta == "1":
-            print('Export_Master_Items()')  
+            print('export_master_Items()')  
         elif choice_meta == "2":
-            print('Export_Fields()')
+            print('export_fields()')
         elif choice_meta == "3":
-            print('Export_Source_Tables()')
+            print('export_source_Tables()')
         elif choice_meta == "4":
-            print('Export_All()')
+            print('export_all()')
         elif choice_meta == "5":
-            print('Generate_Template()')
-        elif choice_meta == "6":
-            print('Generate_File()')
+            print('generate_app_template()')
         elif choice_meta == "99":
             main_menu()
         else:
@@ -106,27 +103,15 @@ class update_calculations:
     def __init__(self):
         clearScr()
         print(self.menuLogo)
-        print("\t{1}--Partial Update Master Items")
-        print("\t{2}--Partial Update Variables")
-        print("\t{3}--Partial Update All")
-        print("\t{4}--Full Update Master Items")
-        print("\t{5}--Full Update Variables")
-        print("\t{6}--Full Update All")
+        print("\t{1}--Update Selected Items")
+        print("\t{2}--Update All Master Items and Variables")
         print("\t{99}-Back To Main Menu \n")
         choice_update = input(app_manager_prompt)
         clearScr()
         if choice_update == "1":
-            print('Partial_Update_Master_Items()')
+            print('update_selected_items')
         elif choice_update == "2":
-            print('Partial_Update_Variables()')
-        elif choice_update == "3":
-            print('Partial_Update_All()')
-        elif choice_update == "4":
-            print('Full_Update_Master_Items()')
-        elif choice_update == "5":
-            print('Full_Update_Variables()')
-        elif choice_update == "6":
-            print('Full_Update_All()')
+            print('update_all()')
         elif choice_update == "99":
             main_menu()
         else:
@@ -149,18 +134,21 @@ class retrieve_settings:
     def __init__(self):
         clearScr()
         print(self.menuLogo)
-        print("\t{1}--Select a Configuration File")
-        print("\t{2}--Select a target application")
-        print("\t{3}--Select a platform")
-        print("\t{99}-Back To Main Menu \n")
+        print("\t{1}--Select the name and location of Application Manager file")          
+        print("\t{2}--Select target application")
+        print("\t{3}--Set Host Credentials")              
+        print("\t{4}--Set User Credentials")
+        print("\t{99}-Back To Main Menu \n\n")
         choice_update = input(app_manager_prompt)
         clearScr()
         if choice_update == "1":
-            print('Config_File()')
+            set_manager_file()
         elif choice_update == "2":
-            print('Target_App()')
+            set_target_application()
         elif choice_update == "3":
-            print('Platform()')        
+            set_host_credentials()    
+        elif choice_update == "4":
+            set_user_credentials()        
         elif choice_update == "99":
             main_menu()
         else:

@@ -2,11 +2,9 @@
 # @Author: jtzadoyko
 # @Date:   2019-03-09 23:42:09
 # @Last Modified by:   jtzdoyko
-# @Last Modified time: 2019-04-09 21:27:25
-
+# @Last Modified time: 2019-09-04 20:23:34
 
 import os
-
 
 class baseConfig:
     """initializing a configuration file 

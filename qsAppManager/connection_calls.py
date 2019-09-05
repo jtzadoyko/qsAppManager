@@ -2,11 +2,7 @@
 # @Author: jtzadoyko
 # @Date:   2019-03-09 23:42:09
 # @Last Modified by:   jtzdoyko
-# @Last Modified time: 2019-04-09 21:27:17
-
-
-from websocket import create_connection
-
+# @Last Modified time: 2019-09-04 20:20:31
 
 class qsEngineCommunication:
     """
