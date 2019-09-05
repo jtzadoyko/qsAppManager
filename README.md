@@ -13,7 +13,7 @@ pip install qsAppManager
 ## Usage
 
 ```python
-
+import qsAppManager
 ```
 
 ## Contributing
