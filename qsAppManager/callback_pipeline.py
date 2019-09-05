@@ -2,12 +2,10 @@
 # @Author: jtzadoyko
 # @Date:   2019-03-09 23:42:09
 # @Last Modified by:   jtzdoyko
-# @Last Modified time: 2019-05-06 20:17:48
+# @Last Modified time: 2019-09-04 20:05:04
 
 
 import json
-from __init__ import *
-
 
 class callback_pipeline:
     """class which uses a collection of API calls to perform tasks
@@ -29,6 +27,3 @@ Attributes:
 
     def __init__(self, url):
         self.ws = qsEngineCommunication(url)
-
-
-callback_pipeline(url)
