@@ -2,7 +2,7 @@
 # @Author: jtzadoyko
 # @Date:   2019-03-09 23:20:07
 # @Last Modified by:   jtzdoyko
-# @Last Modified time: 2019-09-04 22:26:00
+# @Last Modified time: 2019-09-06 14:54:35
 
 import os
 import configparser
@@ -29,17 +29,6 @@ def create_cfg():
         Config.write(cfgfile)
         cfgfile.close()
 
-def read_cfg_settings():
-    config = configparser.ConfigParser()
-    config.read(CFG_FILE_NAME)
-
-    cfg_settings = {'host':config.get(SECTION_NAME, 'host')
-                        ,'app_name':config.get(SECTION_NAME, 'app_name')
-                        ,'app_config_file':config.get(SECTION_NAME, 'app_config_file')
-                        ,'user':config.get(SECTION_NAME, 'user')
-                        ,'passwd':config.get(SECTION_NAME, 'passwd')}
-    return cfg_settings
-
 def write_cfg_settings(cfg_item):
     config = configparser.ConfigParser()
     config.read(CFG_FILE_NAME)
@@ -65,3 +54,16 @@ def set_user_credentials():
     passwd = input('Enter the password for the server you are trying to access:\n')
     write_cfg_settings({'user': user})
     write_cfg_settings({'passwd': passwd})
+
+
+class cfg_settings:
+
+    def __init__(self):
+        create_cfg()
+        config = configparser.ConfigParser()
+        config.read(CFG_FILE_NAME)
+        self.host = config.get(SECTION_NAME, 'host')
+        self.app_name = config.get(SECTION_NAME, 'app_name')
+        self.app_config_file = config.get(SECTION_NAME, 'app_config_file')
+        self.user = config.get(SECTION_NAME, 'user')
+        self.passwd = config.get(SECTION_NAME, 'passwd')
