@@ -9,7 +9,8 @@ from __init__ import *
 
 def clearScr():
     os.system('cls' if os.name == 'nt' else 'clear')
-create_cfg()
+
+settings = cfg_settings()
 
 app_manager_prompt = "Qlik Sense Application Manager ~# "
 
@@ -159,17 +160,14 @@ class retrieve_settings:
 
     def __init__(self):
         clearScr()
-        print(self.menuLogo)
-        print("\t{1}--Change the name and location of application manager file")          
-        print("\t{2}--Change target application")
-        print("\t{3}--Change host credentials")              
-        print("\t{4}--Change user credentials")
-        print("\t{99}-Back To Main Menu \n")
+        settings = cfg_settings()
 
-        settings_dict = read_cfg_settings()
-        print("Current settings are")
-        for j in settings_dict : 
-            print("\t{}: {}".format(j, settings_dict[j])) 
+        print(self.menuLogo)
+        print("\t{1}--Change the name and location of application manager file" + "......{}".format(settings.app_config_file))          
+        print("\t{2}--Change target application..............................." + "......{}".format(settings.app_name))
+        print("\t{3}--Change host credentials................................." + "......{}".format(settings.host))              
+        print("\t{4}--Change user credentials................................." + "......{}".format(settings.user))
+        print("\t{99}-Back To Main Menu \n")
 
         choice_update = input("\n" + app_manager_prompt)
         clearScr()
