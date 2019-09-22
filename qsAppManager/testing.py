@@ -2,62 +2,57 @@
 # @Author: jtzadoyko
 # @Date:   2019-03-26 21:14:29
 # @Last Modified by:   jtzdoyko
-# @Last Modified time: 2019-04-10 19:23:49
+# @Last Modified time: 2019-09-22 18:15:57
 
-# from qsConfig_connection import qsConfiguration
-# from qsApi_connection import qsEngineCommunication
-# from qsApi_global import qsEngineGlobalApi
-# from qsApi_generic import qsEngineGenericObjectApi
-# from qsApi_application import qsEngineAppApi
-
-# measures = qsConfiguration(targetFile='Qlik Application Manager.xlsx', targetSheet='Master Measures')
-# print(measures.fields)
-# print(measures.valid_mi_stup())
-# variables = qsConfiguration(targetFile='Qlik Application Manager.xlsx', targetSheet='Variables')
-# print(variables.fields)
-# print(variables.valid_var_stup())
+from __init__ import * 
 
 """
 INITIALIZING CONNECTION TO DESKTOP APPLICATION
 """
-app = 'Consumer Sales'
+
+app = 'Master Items Manager Testing'
 apppath = app.replace(" ","%20")#remove spaces from URL path
 ISID = 'joshu'
 url = 'ws://localhost:4848/app/C%3A%5CUsers%5C{}%5CDocuments%5CQlik%5CSense%5CApps%5C{}.qvf?reloadUri=http://localhost:4848/dev-hub/engine-api-explorer'.format(ISID,apppath)
         
 ws = qsEngineCommunication(url)
-qlik_app = qsEngineGlobalApi(ws)
-
-
+QSE = qsEngineGlobalApi(ws)
 
 """
 TESTING GLOBAL OBJECT METHODS
 """
-#print(qlik_app.get_doc_list())
-x=qlik_app.open_doc(app)
-ACTIVE_DOC=qlik_app.get_active_doc()
-print('Active Doc: {}'.format(ACTIVE_DOC))
-HANDLE = qlik_app.get_handle(ACTIVE_DOC)
-print('Current Handle: {}'.format(HANDLE))
+def retrieve_application_list(QSE):
+	return [QSE.get_doc_list()[app_index]['qDocName'] for app_index,app_name in enumerate(QSE.get_doc_list())]
 
+retrieve_application_list(QSE)
 
+def retrieve_current_handle(QSE, Doc):
+	ACTIVE_DOC = Doc
+	return QSE.get_handle(ACTIVE_DOC)
+
+active_application = QSE.open_doc(app)
+retrieve_current_handle(QSE, QSE.get_active_doc())
 
 """
 TESTING APPLICATION OBJECT METHODS
 """
 APP_OBJECT = qsEngineAppApi(ws)
-x=APP_OBJECT.get_measures(HANDLE)
-HANDLE = qlik_app.get_handle(x)
-print('Current Handle: {}'.format(HANDLE))
-
-
+MEASURES_DOC = APP_OBJECT.get_measures(retrieve_current_handle(QSE, QSE.get_active_doc()))
 
 """
 TESTING GENERIC OBJECT METHODS
 """
-s=qsEngineGenericObjectApi(ws)
-LAYOUT = s.get_layout(HANDLE)
-print(LAYOUT)
+GENERIC_OBJECT = qsEngineGenericObjectApi(ws)
+LAYOUT = GENERIC_OBJECT.get_layout(retrieve_current_handle(QSE, MEASURES_DOC))
 
+def retrieve_application_measures():
+	for index,measure_dict in enumerate(LAYOUT['qLayout']['qMeasureList']['qItems']):
+		print(LAYOUT['qLayout']['qMeasureList']['qItems'][index]['qInfo']['qId'])
+		print(LAYOUT['qLayout']['qMeasureList']['qItems'][index]['qData']['qMeasure']['qLabelExpression'])
+		print(LAYOUT['qLayout']['qMeasureList']['qItems'][index]['qData']['qMeasure']['qLabel'])
+		print(LAYOUT['qLayout']['qMeasureList']['qItems'][index]['qData']['qMeasure']['qDef'])
+		print(LAYOUT['qLayout']['qMeasureList']['qItems'][index]['qData']['qMeasure']['coloring'])
+
+retrieve_application_measures()
 
 
